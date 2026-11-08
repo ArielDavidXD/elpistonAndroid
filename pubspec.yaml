@@ -1,0 +1,45 @@
+name: piston
+description: "Aplicación de gestión para el taller automotriz El Pistón."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.13.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  go_router: ^16.2.4
+  cupertino_icons: ^1.0.8
+  drift: 2.31.0
+  drift_flutter: 0.2.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  drift_dev: 2.31.0
+  build_runner: 2.13.1
+
+# path_provider_foundation 2.6 usa objective_c con native assets y falla en
+# Windows cuando la ruta tiene espacios. En Android no se usa esa rama.
+dependency_overrides:
+  path_provider_foundation: 2.4.4
+
+flutter:
+  uses-material-design: true
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Poppins-Bold.ttf
+          weight: 700
